@@ -3,7 +3,7 @@
 #set -x
 set -e
 
-if [ -f ./bosh-state.json]
+if [ -f ./bosh-state.json ]
   then
     json -I -f bosh-state.json  -e 'delete(this.current_manifest_sha);'
 fi
