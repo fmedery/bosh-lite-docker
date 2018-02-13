@@ -1,0 +1,10 @@
+## update cloud-config for desjardins DNS
+- type: replace
+  path: /networks/name=default/subnets/0/dns
+  value:
+    - 10.188.1.12
+    - 10.189.1.12
+
+- type: replace
+  path: /networks/0/subnets/0/cloud_properties/name
+  value: net3
