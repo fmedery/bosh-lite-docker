@@ -1,0 +1,28 @@
+message_info() {
+	GREEN="tput setaf 2"
+	RESET="tput sgr0"
+	$GREEN
+	echo ""
+	echo "$1"
+	$RESET
+}
+
+message_warning() {
+	GREEN="tput setaf 3"
+	RESET="tput sgr0"
+	$GREEN
+	echo ""
+	echo "$1"
+	$RESET
+}
+
+message_completed() {
+	message_info "setup completed"
+	echo '***********************'
+	echo "environment   : ${BOSH_ENVIRONMENT} "
+	echo "client        : ${BOSH_CLIENT}"
+	echo "client-secret : ${BOSH_CLIENT_SECRET}"
+	echo '***********************'
+}
+
+# vim: set ft=bash:
