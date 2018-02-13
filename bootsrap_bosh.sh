@@ -14,8 +14,7 @@ export BOSH_ENVIRONMENT="docker"
 # default bosh admin user
 export BOSH_CLIENT="admin"
 
-message_info "check if bosh director is up if not run create.sh to build it"
-
+# check if bosh director is up if not run create.sh to build it
 if ! ping 10.245.0.10 -c 1 -W 1 &>/dev/null
 then
   message_warning "bosh director need to be recreated. Starting ./create.sh"
