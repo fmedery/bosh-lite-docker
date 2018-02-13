@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-#set -x
+# set -x
 
 source ./modules
 
@@ -8,6 +8,7 @@ if [ -f ./bosh-state.json ]
 then
   sed -i -e /current_manifest_sha/d ./bosh-state.json
 fi
+
 message_info "create bosh env"
 bosh create-env bosh-deployment/bosh.yml \
   -o bosh-deployment/docker/cpi.yml \
