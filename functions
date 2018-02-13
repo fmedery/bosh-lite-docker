@@ -19,9 +19,9 @@ message_warning() {
 message_completed() {
 	message_info "setup completed"
 	echo '***********************'
-	echo "environment   : ${BOSH_ENVIRONMENT} "
+	echo "environment   : ${BOSH_ENVIRONMENT}"
 	echo "client        : ${BOSH_CLIENT}"
-	echo "client-secret : ${BOSH_CLIENT_SECRET}"
+	echo "client-secret : $(bosh int ./creds.yml --path /admin_password)"
 	echo '***********************'
 }
 
