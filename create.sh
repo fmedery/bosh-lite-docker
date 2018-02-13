@@ -1,12 +1,14 @@
 #!/bin/bash
 set -e
-set -x
+#set -x
+
+source ./modules
 
 if [ -f ./bosh-state.json ]
 then
   sed -i -e /current_manifest_sha/d ./bosh-state.json
 fi
-
+message_info "create bosh env"
 bosh create-env bosh-deployment/bosh.yml \
   -o bosh-deployment/docker/cpi.yml \
   -o bosh-deployment/docker/unix-sock.yml \
@@ -19,3 +21,5 @@ bosh create-env bosh-deployment/bosh.yml \
   -v internal_ip=10.245.0.10 \
   -v docker_host=unix:///var/run/docker.sock \
   -v network=net3
+
+# vim: set ft=bash:
