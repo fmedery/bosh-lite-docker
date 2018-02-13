@@ -43,7 +43,7 @@ fi
 sed -i -e 's=\[8.8.8.8\]=((dns))=g' ./cloud-config.yml
 
 # apply cloud-config for docker
-message_info "apply cloud-config with opsfiles-cloud-config.yml opsfile to add Desjardins DNS"
+message_info "apply cloud-config with opsfiles-cloud-config.yml opsfile to add LAN DNS"
 bosh --non-interactive --environment=${BOSH_ENVIRONMENT} --client=${BOSH_CLIENT} --client-secret=${BOSH_CLIENT_SECRET} update-cloud-config cloud-config.yml -o ./opsfiles-cloud-config.yml
 
 # download the latest stemcell and upload it to the director
