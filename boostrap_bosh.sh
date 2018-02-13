@@ -2,6 +2,7 @@
 
 #set -x
 set -e
+git submodule init
 
 ## check if bosh-list is up if not run create.sh
 ping 10.245.0.10 -c 1 -W 1 &>/dev/null || ./create.sh
