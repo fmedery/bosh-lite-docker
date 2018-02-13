@@ -20,6 +20,7 @@ else
 fi
 
 export BOSH_ENVIRONMENT="docker"
+
 # default admin user
 export BOSH_CLIENT="admin"
 
@@ -36,6 +37,7 @@ then
   cp -f bosh-deployment/docker/cloud-config.yml ./
   sed -i -e 's=\[8.8.8.8\]=((dns))=g' ./cloud-config.yml
 fi
+
 ## create cloud-config for docker
 ## we do not really need client and client-secret but because it is a bootstrap for new user I prefer
 ## to set them in the cli
