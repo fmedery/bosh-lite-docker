@@ -1,11 +1,10 @@
 #!/bin/bash
-
-#set -x
 set -e
+set -x
 
 if [ -f ./bosh-state.json ]
-  then
-    json -I -f bosh-state.json  -e 'delete(this.current_manifest_sha);'
+then
+  sed -i -e /current_manifest_sha/d ./bosh-state.json
 fi
 
 bosh create-env bosh-deployment/bosh.yml \

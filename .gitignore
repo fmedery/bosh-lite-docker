@@ -1,2 +1,8 @@
 creds.yml
-bosh-state.json
+bosh-state.json*
+cloud-config.yml
+*.backup
+*.bck
+*.swp
+*.test
+test*
