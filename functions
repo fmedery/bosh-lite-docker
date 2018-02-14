@@ -22,6 +22,7 @@ message_warning() {
 
 message_completed() {
 	message_info "setup completed"
+	creds=$((pwd)/creds.yml)
 	echo 
 	echo '****************************************'
 	echo "environment   : ${BOSH_ENVIRONMENT}"
@@ -38,4 +39,4 @@ message_completed() {
 	echo "fi"
 }
 
-# vim: set ft=sh:"
+# vim: set ft=sh:
