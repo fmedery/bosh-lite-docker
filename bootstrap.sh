@@ -26,7 +26,7 @@ fi
 # check if bosh director is up if not run create.sh to build it
 if ! ping 10.245.0.10 -c 1 -W 1 &>/dev/null
 then
-  message_warning "bosh director need to be recreated. Starting ./create.sh"
+  message_warning "bosh director needs to be recreated. Starting ./create.sh"
   ./create.sh
 else
   message_info "bosh director is up and running"
