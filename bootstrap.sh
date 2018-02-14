@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-# set -x
+set -x
  
 source ./functions
 
@@ -14,12 +14,13 @@ export BOSH_ENVIRONMENT="docker"
 # default bosh admin user
 export BOSH_CLIENT="admin"
 
-# if docker socket is not 777 we need change it
-# if ! ls -l /var/run/docker.sock|grep srwxrwxrwx -q
-# then
-#   message_warning "change permission to docker to 777. sudo will be used"
-#   sudo chmod 777 /var/run/docker.sock
-# fi
+# because of https://github.com/cloudfoundry/bosh-deployment/issues/94
+# we need to set the socket permission to 777. Sad bu true (James Hetfield, Lars Ulrich)
+if ! ls -l /var/run/docker.sock|grep srwxrwxrwx -q
+then
+  message_warning "change permission to docker to 777. sudo will be used"
+  sudo chmod 777 /var/run/docker.sock
+fi
 
 # check if bosh director is up if not run create.sh to build it
 if ! ping 10.245.0.10 -c 1 -W 1 &>/dev/null
