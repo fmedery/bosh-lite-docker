@@ -15,11 +15,11 @@ export BOSH_ENVIRONMENT="docker"
 export BOSH_CLIENT="admin"
 
 # if docker socket is not 777 we need change it
-if ! ls -l /var/run/docker.sock|grep srwxrwxrwx -q
-then
-  message_warning "change permission to docker to 777. sudo will be used"
-  sudo chmod 777 /var/run/docker.sock
-fi
+# if ! ls -l /var/run/docker.sock|grep srwxrwxrwx -q
+# then
+#   message_warning "change permission to docker to 777. sudo will be used"
+#   sudo chmod 777 /var/run/docker.sock
+# fi
 
 # check if bosh director is up if not run create.sh to build it
 if ! ping 10.245.0.10 -c 1 -W 1 &>/dev/null
