@@ -3,9 +3,9 @@
 
 ## info
 * Tested on Linux
-* You need to be able to run ```sudo``` commands
 * ```docker-ce``` needs to be installed
 * ```sudo```, ```sed``` and ```tput``` (which are probably already installed) are also needed.
+* You need to be able to run ```sudo``` commands
 * your user needs to be part of the docker group:
 ```sh
 sudo usermod -a -G docker ${USER}
