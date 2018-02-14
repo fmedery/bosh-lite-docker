@@ -16,7 +16,7 @@ export BOSH_ENVIRONMENT="docker"
 export BOSH_CLIENT="admin"
 
 # because of https://github.com/cloudfoundry/bosh-deployment/issues/94
-# we need to set the socket permission to 777. Sad bu true (James Hetfield, Lars Ulrich)
+# we need to set the socket permission to 777. Sad but true (James Hetfield, Lars Ulrich)
 if ! ls -l /var/run/docker.sock|grep srwxrwxrwx -q
 then
   message_warning "change permission to docker to 777. sudo will be used"
