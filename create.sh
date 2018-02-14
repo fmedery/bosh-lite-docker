@@ -2,7 +2,7 @@
 set -e
 # set -x
 
-source ./modules
+source ./functions
 
 if [ -f ./bosh-state.json ]
 then
