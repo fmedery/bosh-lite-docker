@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -e
 # set -x
 
@@ -10,7 +11,7 @@ then
 fi
 
 message_info "create bosh env"
-bosh create-env bosh-deployment/bosh.yml \
+$BOSH create-env bosh-deployment/bosh.yml \
   -o bosh-deployment/docker/cpi.yml \
   -o bosh-deployment/docker/unix-sock.yml \
   -o bosh-deployment/jumpbox-user.yml \
