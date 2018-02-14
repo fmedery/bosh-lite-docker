@@ -29,7 +29,7 @@ message_completed() {
 	echo "client-secret : $(bosh int ./creds.yml --path /admin_password)"
 	echo '****************************************'
 	echo 
-	echo "You can add these lines at the end of your ${HOME}/.bashrc:"
+	echo "You can add these lines at the end of your ${HOME}/.bashrc"
 	echo "if [ -f $(pwd)/creds.yml ]"
 	echo "then"
 	echo "  export BOSH_CLIENT=${BOSH_CLIENT}"
