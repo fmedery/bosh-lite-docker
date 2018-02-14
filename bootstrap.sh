@@ -28,7 +28,7 @@ then
   message_warning "bosh director need to be recreated. Starting ./create.sh"
   ./create.sh
 else
-  message_info "bosh director is up"
+  message_info "bosh director is up and running"
   message_completed
   exit 0
 fi
