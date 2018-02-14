@@ -14,6 +14,13 @@ export BOSH_ENVIRONMENT="docker"
 # default bosh admin user
 export BOSH_CLIENT="admin"
 
+# if docker socket is not 777 we need change it
+if ! ls -l /var/run/docker.sock|grep srwxrwxrwx -q
+then
+  message_warning "change permission to docker to 777. sudo will be used"
+  sudo chmod 777 /var/run/docker.sock
+fi
+
 # check if bosh director is up if not run create.sh to build it
 if ! ping 10.245.0.10 -c 1 -W 1 &>/dev/null
 then
@@ -50,13 +57,6 @@ bosh --non-interactive --environment=${BOSH_ENVIRONMENT} --client=${BOSH_CLIENT}
 message_info "get latest stemcell and upload it"
 wget --content-disposition -q -N -P /tmp/ -N https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent 
 bosh --non-interactive --environment=${BOSH_ENVIRONMENT} --client=${BOSH_CLIENT} --client-secret=${BOSH_CLIENT_SECRET} upload-stemcell /tmp/bosh-stemcell-*-warden-boshlite-ubuntu-trusty-go_agent.tgz
-
-# if docker socket is not 777 we need change it
-if ! ls -l /var/run/docker.sock|grep srwxrwxrwx -q
-then
-  message_warning "change permission to docker to 777. sudo will be used"
-  sudo chmod 777 /var/run/docker.sock
-fi
 
 message_completed
 
