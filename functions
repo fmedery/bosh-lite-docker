@@ -25,4 +25,4 @@ message_completed() {
 	echo '***********************'
 }
 
-# vim: set ft=bash:
+# vim: set ft=sh:

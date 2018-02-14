@@ -23,4 +23,4 @@ bosh create-env bosh-deployment/bosh.yml \
   -v docker_host=unix:///var/run/docker.sock \
   -v network=net3
 
-# vim: set ft=bash:
+# vim: set ft=sh:

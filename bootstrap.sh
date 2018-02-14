@@ -60,4 +60,4 @@ bosh --non-interactive --environment=${BOSH_ENVIRONMENT} --client=${BOSH_CLIENT}
 
 message_completed
 
-# vim: set ft=bash:
+# vim: set ft=sh:
