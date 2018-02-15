@@ -15,6 +15,7 @@ $BOSH create-env bosh-deployment/bosh.yml \
   -o bosh-deployment/docker/cpi.yml \
   -o bosh-deployment/docker/unix-sock.yml \
   -o bosh-deployment/jumpbox-user.yml \
+  -o $(pwd)/opsfiles-cloud-config.yml \
   --state=bosh-state.json \
   --vars-store creds.yml \
   -v director_name=docker \
