@@ -1,6 +1,5 @@
 # bosh-lite-docker
 
-
 ## info
 * Tested on Linux
 * ```docker-ce``` needs to be installed
@@ -15,6 +14,7 @@ sudo usermod -a -G docker ${USER}
 ```sh
 sudo ln -s $(which bosh2) /usr/loca/bin/bosh
 ```
+* **the script needs to be run at every reboot.**
 
 ## how to install bosh lite docker
 * git clone this repository
@@ -22,3 +22,7 @@ sudo ln -s $(which bosh2) /usr/loca/bin/bosh
 ```sh
 ./bootstrap.sh
 ```
+
+## cleanup
+* you can use ./cleanup.sh to remove all the files created
+
