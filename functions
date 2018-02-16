@@ -22,7 +22,6 @@ message_warning() {
 
 message_completed() {
 	message_info "setup completed"
-	creds=$((pwd)/creds.yml)
 	echo 
 	echo '****************************************'
 	echo "environment   : ${BOSH_ENVIRONMENT}"
