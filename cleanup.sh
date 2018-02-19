@@ -1,10 +1,11 @@
 #!/bin/bash
-set -ex
+set -e
+# set -x
 . functions
 
 files="bosh-state.json creds.yml cloud-config.yml"
 
-if [ $1 == '-d' ] || [ $1 == '--dry-run' ]
+if [ $1 == '-d' ] || [ $1 -eq '--dry-run' ]
 then
   message_warning "this is a dry-run"
   COMMAND="echo rm -f"

@@ -1,9 +1,12 @@
 #!/bin/bash
 
 set -e
-# set -x
+set -x
 
-source ./functions
+
+#sourcing functions file
+. functions
+
 
 if [ -f ./bosh-state.json ]
 then
