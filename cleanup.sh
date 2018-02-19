@@ -5,23 +5,15 @@ set -e
 
 files="bosh-state.json creds.yml cloud-config.yml"
 
-if [ $1 == '-d' ] || [ $1 -eq '--dry-run' ]
-then
-  message_warning "this is a dry-run"
-  COMMAND="echo rm -f"
-else
-  COMMAND="rm -f"
-fi
-
 message_warning "$files will deleted from $(pwd)"
 
-read -p "press enter to continue"
+read -p "press enter to continue or CTRL+C to cancel."
 
 for file in ${files}
 do
   if [ -f ${file} ]
   then
-    $COMMAND ${file}
+    rm -f ${file}
     message_info "${file} has been deleted"
   fi
 done
