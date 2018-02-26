@@ -1,0 +1,4 @@
+- type: replace
+  path: /networks/0/subnets/0/cloud_properties/name
+  value: net3
+

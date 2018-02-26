@@ -15,6 +15,7 @@ sudo usermod -a -G docker ${USER}
 ```sh
 sudo ln -s $(which bosh2) /usr/loca/bin/bosh
 ```
+* **you MUST update the DNS IPs in ```opsfiles-cloud-config-dns.yml```**
 * **the script needs to be run at every reboot.**
 
 ## how to install bosh lite docker

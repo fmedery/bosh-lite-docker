@@ -1,0 +1,6 @@
+## update cloud-config for LAN DNS because our FIREWALL blocks all other DNS servers :(
+- type: replace
+  path: /networks/name=default/subnets/0/dns
+  value:
+    - 10.188.1.12
+    - 10.189.1.12
