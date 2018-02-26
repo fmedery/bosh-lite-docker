@@ -55,10 +55,10 @@ message_info "apply cloud-config with opsfiles-cloud-config.yml opsfile to add L
 $BOSH --non-interactive --environment=${BOSH_ENVIRONMENT} --client=${BOSH_CLIENT} --client-secret=${BOSH_CLIENT_SECRET} update-cloud-config cloud-config.yml -o ./opsfiles-cloud-config.yml
 
 # download the latest stemcell and upload it to the director
-# we will use /tmp as the target folder
-message_info "get latest stemcell and upload it"
-wget --content-disposition -q -N -P /tmp/ -N https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent 
-$BOSH --non-interactive --environment=${BOSH_ENVIRONMENT} --client=${BOSH_CLIENT} --client-secret=${BOSH_CLIENT_SECRET} upload-stemcell /tmp/bosh-stemcell-*-warden-boshlite-ubuntu-trusty-go_agent.tgz
+# we will use ${HOME}/.bosh as the target folder in case you need it later
+message_info "get latest stemcell and upload it to ${HOME}/.bosh"
+wget --content-disposition -q -N -P ${HOME}/.bosh -N https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent 
+$BOSH --non-interactive --environment=${BOSH_ENVIRONMENT} --client=${BOSH_CLIENT} --client-secret=${BOSH_CLIENT_SECRET} upload-stemcell ${HOME}/.bosh/bosh-stemcell-*-warden-boshlite-ubuntu-trusty-go_agent.tgz
 
 message_completed
 

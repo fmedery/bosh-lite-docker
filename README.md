@@ -29,5 +29,5 @@ sudo ln -s $(which bosh2) /usr/loca/bin/bosh
 git submodule foreach git pull origin master
 ```
 ## cleanup
-* you can use ./cleanup.sh to remove all the files created by ```create.sh```
+* you can use ```./cleanup.sh``` to remove all the files, folder and docker objects created during the installation of bosh-lite-docker
 
