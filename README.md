@@ -10,6 +10,7 @@
 sudo usermod -a -G docker ${USER}
 ```
 * version 2 of bosh-cli needs to be installed: https://bosh.io/docs/cli-v2.html#install
+* bosh cli needs to be executable.
 * if ```bosh``` cli is called ```bosh2``` on your computer, you can replace the BOSH variable inside functions file or create a symlink:
 ```sh
 sudo ln -s $(which bosh2) /usr/loca/bin/bosh
@@ -22,7 +23,11 @@ sudo ln -s $(which bosh2) /usr/loca/bin/bosh
 ```sh
 ./bootstrap.sh
 ```
-
+## how to update the submodule
+* after installion, you can update the submodule to the latest version
+```sh
+git submodule foreach git pull origin master
+```
 ## cleanup
 * you can use ./cleanup.sh to remove all the files created by ```create.sh```
 
