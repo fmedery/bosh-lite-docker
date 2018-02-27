@@ -29,13 +29,13 @@ then
   message_info "${HOME}/.bosh has been deleted"
 fi
 
-for container in $(docker ps -a | grep bosh.io | awk '{print $1}')
+for container in $(docker ps -a | grep 'bosh.io' | awk '{print $1}')
 do
   docker rm -f ${container}
   message_info "container ${container} has been deleted"
 done
 
-for image in $(docker image ls | grep bosh.io | awk '{print $3}')
+for image in $(docker image ls | grep 'bosh.io' | awk '{print $3}')
 do 
   docker rmi ${image}
   message_info "${image} has been deleted"  

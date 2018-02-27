@@ -51,8 +51,8 @@ fi
 sed -i -e 's=\[8.8.8.8\]=((dns))=g' ./cloud-config.yml
 
 # apply cloud-config for docker
-message_info "apply cloud-config with opsfiles-cloud-config.yml opsfile to add LAN DNS"
-$BOSH --non-interactive --environment=${BOSH_ENVIRONMENT} --client=${BOSH_CLIENT} --client-secret=${BOSH_CLIENT_SECRET} update-cloud-config cloud-config.yml -o ./opsfiles-cloud-config.yml
+message_info "apply cloud-config with custom opsfiles"
+$BOSH --non-interactive --environment=${BOSH_ENVIRONMENT} --client=${BOSH_CLIENT} --client-secret=${BOSH_CLIENT_SECRET} update-cloud-config cloud-config.yml -o opsfiles-cloud-config-dns.yml -o opsfiles-cloud-config-docker.yml
 
 # download the latest stemcell and upload it to the director
 # we will use ${HOME}/.bosh as the target folder in case you need it later
