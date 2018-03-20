@@ -13,7 +13,7 @@ sudo usermod -a -G docker ${USER}
 * bosh cli needs to be executable.
 * if ```bosh``` cli is called ```bosh2``` on your computer, you can replace the BOSH variable inside functions file or create a symlink:
 ```sh
-sudo ln -s $(which bosh2) /usr/loca/bin/bosh
+sudo ln -s $(which bosh2) /usr/local/bin/bosh
 ```
 * **you MUST update the DNS IPs in ```opsfiles-cloud-config-dns.yml```**
 * **the script needs to be run at every reboot.**
