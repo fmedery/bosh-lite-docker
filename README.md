@@ -8,6 +8,7 @@
 * your user needs to be part of the docker group:
 ```sh
 sudo usermod -a -G docker ${USER}
+newgrp docker
 ```
 * version 2 of bosh-cli needs to be installed: https://bosh.io/docs/cli-v2.html#install
 * bosh cli needs to be executable.
